@@ -59,9 +59,9 @@ public class User implements Serializable {
     private String userAddress;
 
     /**
-     * 用户角色：vip0/vip1/vip2/admin
+     * 用户角色：0:admin/1:vip1/2:vip2/3:vip3
      */
-    private String userRole;
+    private Integer userRole;
 
     /**
      * 创建时间
