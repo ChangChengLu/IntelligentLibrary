@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "sprint-metadata-test.value",
+      "type": "java.lang.String",
+      "description": "Description for sprint-metadata-test.value."
+  }
+] }

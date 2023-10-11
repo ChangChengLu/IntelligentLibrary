@@ -1,8 +1,9 @@
-package com.cclu.intellignetlibrary.model.vo;
+package com.cclu.intellignetlibrary.model.vo.user;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
@@ -10,7 +11,7 @@ import java.math.BigDecimal;
  * @date 2023/9/14 0:09
  */
 @Data
-public class LoginUserVO {
+public class LoginUserVO implements Serializable {
 
     /**
      * id

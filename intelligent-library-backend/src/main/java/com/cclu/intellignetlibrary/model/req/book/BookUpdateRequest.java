@@ -1,26 +1,22 @@
-package com.cclu.intellignetlibrary.model.entity;
+package com.cclu.intellignetlibrary.model.req.book;
 
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableLogic;
-import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.Date;
 
 /**
  * @author ChangCheng Lu
- * @date 2023/9/9 13:36
+ * @date 2023/10/10 16:36
+ * @description
+ * @copyright 卢常诚 -- ChangChengLu
  */
-@TableName(value ="book")
 @Data
-public class Book implements Serializable {
+public class BookUpdateRequest implements Serializable {
+
     /**
      * id
      */
-    @TableId
     private Long id;
 
     /**
@@ -69,16 +65,6 @@ public class Book implements Serializable {
     private String bookTags;
 
     /**
-     * 购买总数量
-     */
-    private Integer buyNumber;
-
-    /**
-     * 借阅总数量
-     */
-    private Integer borrowNumber;
-
-    /**
      * 书籍描述
      */
     private String bookDescription;
@@ -88,22 +74,4 @@ public class Book implements Serializable {
      */
     private Integer bookStatus;
 
-    /**
-     * 创建时间
-     */
-    private Date createTime;
-
-    /**
-     * 更新时间
-     */
-    private Date updateTime;
-
-    /**
-     * 逻辑删除
-     */
-    @TableLogic
-    private Integer isDelete;
-
-    @TableField(exist = false)
-    private static final long serialVersionUID = 1L;
 }

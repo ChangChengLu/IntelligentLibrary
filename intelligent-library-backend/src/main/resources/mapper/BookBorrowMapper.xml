@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cclu.intellignetlibrary.mapper.BookBorrowMapper">
+
+    <resultMap id="BaseResultMap" type="com.cclu.intellignetlibrary.model.entity.BookBorrow">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="userId" column="user_id" jdbcType="BIGINT"/>
+            <result property="bookId" column="book_id" jdbcType="INTEGER"/>
+            <result property="borrowNumber" column="borrow_number" jdbcType="INTEGER"/>
+            <result property="totalPrice" column="total_price" jdbcType="DECIMAL"/>
+            <result property="vipPrice" column="vip_price" jdbcType="DECIMAL"/>
+            <result property="borrowDay" column="borrow_day" jdbcType="INTEGER"/>
+            <result property="returnData" column="return_data" jdbcType="TIMESTAMP"/>
+            <result property="borrowData" column="borrow_data" jdbcType="TIMESTAMP"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="isDelete" column="is_delete" jdbcType="TINYINT"/>
+            <result property="bookBorrowStatus" column="book_borrow_status" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,user_id,book_id,
+        borrow_number,total_price,vip_price,
+        borrow_day,return_data,borrow_data,
+        create_time,update_time,is_delete,
+        book_borrow_status
+    </sql>
+</mapper>

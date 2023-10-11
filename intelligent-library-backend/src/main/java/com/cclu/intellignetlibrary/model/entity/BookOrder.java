@@ -54,6 +54,11 @@ public class BookOrder implements Serializable {
     private BigDecimal vipPrice;
 
     /**
+     * 0:paying/1:payed
+     */
+    private Integer bookOrderStatus;
+
+    /**
      * 创建时间
      */
     private Date createTime;

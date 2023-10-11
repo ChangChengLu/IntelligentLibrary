@@ -64,6 +64,11 @@ public class BookBorrow implements Serializable {
     private Date borrowData;
 
     /**
+     * 0:borrowing/1:borrowed
+     */
+    private Integer bookBorrowStatus;
+
+    /**
      * 创建时间
      */
     private Date createTime;
