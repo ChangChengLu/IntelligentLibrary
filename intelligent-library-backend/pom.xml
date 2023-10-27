@@ -10,6 +10,7 @@
         <version>2.7.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
     <groupId>com.cclu</groupId>
     <artifactId>intelligent-library-backend</artifactId>
     <version>1.0.0</version>
