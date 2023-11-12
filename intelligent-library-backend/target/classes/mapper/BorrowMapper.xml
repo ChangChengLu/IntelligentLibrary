@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cclu.intelligentlibrary.mapper.BorrowMapper">
 
-    <resultMap id="BaseResultMap" type="com.cclu.intelligentlibrary.model.entity.Borrow">
+    <resultMap id="BaseResultMap" type="com.cclu.intelligentlibrary.model.po.Borrow">
             <id property="id" column="id" jdbcType="BIGINT"/>
             <result property="userId" column="user_id" jdbcType="BIGINT"/>
             <result property="bookId" column="book_id" jdbcType="BIGINT"/>

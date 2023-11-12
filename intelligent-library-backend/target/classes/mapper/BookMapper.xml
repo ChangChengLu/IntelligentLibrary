@@ -4,9 +4,8 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cclu.intelligentlibrary.mapper.BookMapper">
 
-    <resultMap id="BaseResultMap" type="com.cclu.intelligentlibrary.model.entity.Book">
+    <resultMap id="BaseResultMap" type="com.cclu.intelligentlibrary.model.po.Book">
             <id property="id" column="id" jdbcType="BIGINT"/>
-            <result property="bookId" column="book_id" jdbcType="VARCHAR"/>
             <result property="bookName" column="book_name" jdbcType="VARCHAR"/>
             <result property="bookAuthor" column="book_author" jdbcType="VARCHAR"/>
             <result property="bookAvatar" column="book_avatar" jdbcType="VARCHAR"/>
@@ -18,17 +17,17 @@
             <result property="bookPrice" column="book_price" jdbcType="DECIMAL"/>
             <result property="bookBorrowPrice" column="book_borrow_price" jdbcType="DECIMAL"/>
             <result property="bookStock" column="book_stock" jdbcType="INTEGER"/>
-            <result property="createtime" column="createTime" jdbcType="TIMESTAMP"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
             <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
             <result property="deleted" column="deleted" jdbcType="TINYINT"/>
     </resultMap>
 
     <sql id="Base_Column_List">
-        id,book_id,book_name,
+        id,book_name,
         book_author,book_avatar,book_desc,
         book_publisher,book_isbn,book_tags,
         book_state,book_price,book_borrow_price,
-        book_stock,createTime,update_time,
+        book_stock,create_time,update_time,
         deleted
     </sql>
 </mapper>

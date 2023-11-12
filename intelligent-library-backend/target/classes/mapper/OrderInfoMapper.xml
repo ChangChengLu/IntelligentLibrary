@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cclu.intelligentlibrary.mapper.OrderInfoMapper">
 
-    <resultMap id="BaseResultMap" type="com.cclu.intelligentlibrary.model.entity.OrderInfo">
+    <resultMap id="BaseResultMap" type="com.cclu.intelligentlibrary.model.po.OrderInfo">
             <id property="id" column="id" jdbcType="BIGINT"/>
             <result property="orderId" column="order_id" jdbcType="BIGINT"/>
             <result property="bookId" column="book_id" jdbcType="BIGINT"/>
