@@ -12,7 +12,7 @@ import {FormattedMessage, history, SelectLang, useIntl, Helmet} from '@umijs/max
 import { Alert, message, Tabs } from 'antd';
 import Settings from '../../../../config/defaultSettings';
 import React, { useState } from 'react';
-import {userRegisterUsingPOST} from "@/services/power-bi/userController";
+import {userRegisterUsingPOST} from "@/services/intelligent-library/userController";
 
 const Lang = () => {
   const langClassName = useEmotionCss(({ token }) => {
@@ -69,7 +69,7 @@ const Login: React.FC = () => {
 
   const intl = useIntl();
 
-  const handleSubmit = async (values: API.UserRegisterRequest) => {
+  const handleSubmit = async (values: API.UserRegisterReq) => {
     try {
       // 登录
       const res = await userRegisterUsingPOST(values);
@@ -119,13 +119,13 @@ const Login: React.FC = () => {
             maxWidth: '75vw',
           }}
           logo={<img alt="logo" src="/iKun.jpg" />}
-          title="PowerBI"
-          subTitle={intl.formatMessage({ id: 'PowerBI 企业级智能数据分析平台' })}
+          title="Intelligent Library"
+          subTitle={intl.formatMessage({ id: 'Intelligent Library 优质电纸书购买和订阅平台' })}
           initialValues={{
             autoLogin: true,
           }}
           onFinish={async (values) => {
-            await handleSubmit(values as API.UserRegisterRequest);
+            await handleSubmit(values as API.UserRegisterReq);
           }}
         >
           <Tabs

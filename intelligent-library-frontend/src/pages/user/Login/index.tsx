@@ -18,8 +18,8 @@ import {FormattedMessage, history, SelectLang, useIntl, Helmet, useModel} from '
 import { Alert, message, Tabs } from 'antd';
 import Settings from '../../../../config/defaultSettings';
 import React, { useState } from 'react';
-import {getLoginUserUsingGET, userLoginUsingPOST} from "@/services/power-bi/userController";
 import {Link} from "@@/exports";
+import {getLoginUserUsingGET, userLoginUsingPOST} from "@/services/intelligent-library/userController";
 
 const ActionIcons = () => {
   const langClassName = useEmotionCss(({ token }) => {
@@ -111,7 +111,7 @@ const Login: React.FC = () => {
     }
   };
 
-  const handleSubmit = async (values: API.UserLoginRequest) => {
+  const handleSubmit = async (values: API.UserLoginReq) => {
     try {
       // 登录
       const res = await userLoginUsingPOST(values);
@@ -162,8 +162,8 @@ const Login: React.FC = () => {
             maxWidth: '75vw',
           }}
           logo={<img alt="logo" src="/iKun.jpg" />}
-          title="PowerBI"
-          subTitle={intl.formatMessage({ id: 'PowerBI 企业级智能数据分析平台' })}
+          title="Intelligent Library"
+          subTitle={intl.formatMessage({ id: 'Intelligent Library 优质书籍购买和订阅平台' })}
           initialValues={{
             autoLogin: true,
           }}
@@ -176,7 +176,7 @@ const Login: React.FC = () => {
             <ActionIcons key="icons" />,
           ]}
           onFinish={async (values) => {
-            await handleSubmit(values as API.UserLoginRequest);
+            await handleSubmit(values as API.UserLoginReq);
           }}
         >
           <Tabs

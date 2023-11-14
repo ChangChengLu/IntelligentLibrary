@@ -1,7 +1,7 @@
 package com.cclu.intelligentlibrary.service.vip;
 
-import com.cclu.intelligentlibrary.model.po.Vip;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.cclu.intelligentlibrary.model.po.Vip;
 
 import java.math.BigDecimal;
 

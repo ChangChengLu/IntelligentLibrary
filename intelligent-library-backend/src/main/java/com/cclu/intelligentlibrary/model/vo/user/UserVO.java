@@ -3,7 +3,6 @@ package com.cclu.intelligentlibrary.model.vo.user;
 import lombok.Data;
 
 import java.io.Serializable;
-import java.util.Date;
 
 /**
  * @author ChangCheng Lu

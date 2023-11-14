@@ -20,8 +20,8 @@ const Footer: React.FC = () => {
       copyright={`${currentYear} ${defaultMessage}`}
       links={[
         {
-          key: 'PowerBI Pro',
-          title: 'PowerBI Pro',
+          key: 'Intelligent Library',
+          title: 'Intelligent Library',
           href: '',
           blankTarget: true,
         },
@@ -32,8 +32,8 @@ const Footer: React.FC = () => {
           blankTarget: true,
         },
         {
-          key: 'PowerBI',
-          title: 'PowerBI',
+          key: 'Intelligent Library',
+          title: 'Intelligent Library',
           href: '',
           blankTarget: true,
         },

@@ -3,7 +3,6 @@ package com.cclu.intelligentlibrary.model.vo.book;
 import lombok.Data;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 
 /**
  * @author ChangCheng Lu

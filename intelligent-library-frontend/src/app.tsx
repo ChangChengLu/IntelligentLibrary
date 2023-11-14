@@ -1,16 +1,13 @@
 import Footer from '@/components/Footer';
 import { Question, SelectLang } from '@/components/RightContent';
 import { LinkOutlined } from '@ant-design/icons';
-import type { Settings as LayoutSettings } from '@ant-design/pro-components';
 import { SettingDrawer } from '@ant-design/pro-components';
 import type { RunTimeLayoutConfig } from '@umijs/max';
 import { history, Link } from '@umijs/max';
-import defaultSettings from '../config/defaultSettings';
 import { errorConfig } from './requestErrorConfig';
-import { currentUser as queryCurrentUser } from './services/ant-design-pro/api';
 import React from 'react';
 import { AvatarDropdown, AvatarName } from './components/RightContent/AvatarDropdown';
-import {getLoginUserUsingGET} from "@/services/power-bi/userController";
+import {getLoginUserUsingGET} from "@/services/intelligent-library/userController";
 const isDev = process.env.NODE_ENV === 'development';
 const loginPath = '/user/login';
 const registryPath = '/user/registry';
@@ -54,7 +51,7 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
       },
     },
     waterMarkProps: {
-      content: initialState?.currentUser?.userName,
+      content: initialState?.currentUser?.userNickname,
     },
     footerRender: () => <Footer />,
     onPageChange: () => {

@@ -6,13 +6,13 @@ import com.cclu.intelligentlibrary.common.response.BaseResponseCode;
 import com.cclu.intelligentlibrary.constant.CommonConstant;
 import com.cclu.intelligentlibrary.constant.UserConstant;
 import com.cclu.intelligentlibrary.exception.BusinessException;
-import com.cclu.intelligentlibrary.model.po.User;
+import com.cclu.intelligentlibrary.mapper.UserMapper;
 import com.cclu.intelligentlibrary.model.enums.UserRoleEnum;
-import com.cclu.intelligentlibrary.model.req.user.UserQueryRequest;
+import com.cclu.intelligentlibrary.model.po.User;
+import com.cclu.intelligentlibrary.model.req.user.UserQueryReq;
 import com.cclu.intelligentlibrary.model.vo.user.LoginUserVO;
 import com.cclu.intelligentlibrary.model.vo.user.UserVO;
 import com.cclu.intelligentlibrary.service.user.UserService;
-import com.cclu.intelligentlibrary.mapper.UserMapper;
 import com.cclu.intelligentlibrary.utils.SqlUtils;
 import com.cclu.intelligentlibrary.utils.ThrowUtils;
 import lombok.extern.slf4j.Slf4j;
@@ -175,7 +175,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
     }
 
     @Override
-    public QueryWrapper<User> getQueryWrapper(UserQueryRequest userQueryRequest) {
+    public QueryWrapper<User> getQueryWrapper(UserQueryReq userQueryRequest) {
         ThrowUtils.throwIf(userQueryRequest == null, BaseResponseCode.PARAMS_ERROR, "请求参数为空");
         Long id = userQueryRequest.getId();
         String userName = userQueryRequest.getUserNickname();

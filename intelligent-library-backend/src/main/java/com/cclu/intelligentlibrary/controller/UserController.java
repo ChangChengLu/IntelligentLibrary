@@ -5,8 +5,8 @@ import com.cclu.intelligentlibrary.annotation.AuthCheck;
 import com.cclu.intelligentlibrary.common.request.DeleteRequest;
 import com.cclu.intelligentlibrary.common.response.BaseResponse;
 import com.cclu.intelligentlibrary.common.response.BaseResponseCode;
-import com.cclu.intelligentlibrary.model.po.User;
 import com.cclu.intelligentlibrary.model.enums.UserRoleEnum;
+import com.cclu.intelligentlibrary.model.po.User;
 import com.cclu.intelligentlibrary.model.req.user.*;
 import com.cclu.intelligentlibrary.model.vo.user.LoginUserVO;
 import com.cclu.intelligentlibrary.model.vo.user.UserVO;
@@ -35,7 +35,7 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/registry")
-    public BaseResponse<Long> userRegister(@RequestBody UserRegisterRequest userRegisterRequest) {
+    public BaseResponse<Long> userRegister(@RequestBody UserRegisterReq userRegisterRequest) {
         ThrowUtils.throwIf(userRegisterRequest == null, BaseResponseCode.PARAMS_ERROR);
         String userAccount = userRegisterRequest.getUserAccount();
         String userPassword = userRegisterRequest.getUserPassword();
@@ -48,7 +48,7 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public BaseResponse<LoginUserVO> userLogin(@RequestBody UserLoginRequest userLoginRequest, HttpServletRequest request) {
+    public BaseResponse<LoginUserVO> userLogin(@RequestBody UserLoginReq userLoginRequest, HttpServletRequest request) {
         ThrowUtils.throwIf(userLoginRequest == null, BaseResponseCode.PARAMS_ERROR);
         String userAccount = userLoginRequest.getUserAccount();
         String userPassword = userLoginRequest.getUserPassword();
@@ -74,7 +74,7 @@ public class UserController {
 
     @PostMapping("/add")
     @AuthCheck(mustRole = UserRoleEnum.ADMIN)
-    public BaseResponse<Long> addUser(@RequestBody UserAddRequest userAddRequest) {
+    public BaseResponse<Long> addUser(@RequestBody UserAddReq userAddRequest) {
         ThrowUtils.throwIf(userAddRequest == null, BaseResponseCode.PARAMS_ERROR);
         User user = new User();
         BeanUtils.copyProperties(userAddRequest, user);
@@ -96,7 +96,7 @@ public class UserController {
 
     @PostMapping("/update")
     @AuthCheck(mustRole = UserRoleEnum.ADMIN)
-    public BaseResponse<Boolean> updateUser(@RequestBody UserUpdateRequest userUpdateRequest) {
+    public BaseResponse<Boolean> updateUser(@RequestBody UserUpdateReq userUpdateRequest) {
         ThrowUtils.throwIf(
                 userUpdateRequest == null || userUpdateRequest.getId() == null,
                 BaseResponseCode.PARAMS_ERROR
@@ -119,7 +119,7 @@ public class UserController {
 
     @PostMapping("/list/page")
     @AuthCheck(mustRole = UserRoleEnum.ADMIN)
-    public BaseResponse<Page<User>> listUserByPage(@RequestBody UserQueryRequest userQueryRequest) {
+    public BaseResponse<Page<User>> listUserByPage(@RequestBody UserQueryReq userQueryRequest) {
         long current = userQueryRequest.getCurrent();
         long size = userQueryRequest.getPageSize();
         Page<User> userPage = userService.page(new Page<>(current, size),
@@ -128,7 +128,7 @@ public class UserController {
     }
 
     @PostMapping("/list/page/vo")
-    public BaseResponse<Page<UserVO>> listUserVoByPage(@RequestBody UserQueryRequest userQueryRequest) {
+    public BaseResponse<Page<UserVO>> listUserVoByPage(@RequestBody UserQueryReq userQueryRequest) {
         ThrowUtils.throwIf(userQueryRequest == null, BaseResponseCode.PARAMS_ERROR);
         long current = userQueryRequest.getCurrent();
         long size = userQueryRequest.getPageSize();

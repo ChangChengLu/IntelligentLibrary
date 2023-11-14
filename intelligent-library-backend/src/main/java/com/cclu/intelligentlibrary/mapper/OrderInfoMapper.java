@@ -1,7 +1,7 @@
 package com.cclu.intelligentlibrary.mapper;
 
-import com.cclu.intelligentlibrary.model.po.OrderInfo;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.cclu.intelligentlibrary.model.po.OrderInfo;
 
 /**
 * @author ChangChengLu

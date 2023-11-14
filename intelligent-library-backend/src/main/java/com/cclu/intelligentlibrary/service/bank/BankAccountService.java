@@ -1,7 +1,7 @@
 package com.cclu.intelligentlibrary.service.bank;
 
-import com.cclu.intelligentlibrary.model.po.BankAccount;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.cclu.intelligentlibrary.model.po.BankAccount;
 
 import java.math.BigDecimal;
 

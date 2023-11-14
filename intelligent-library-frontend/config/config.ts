@@ -141,7 +141,7 @@ export default defineConfig({
       schemaPath: "http://localhost:8081/api/v2/api-docs",
       // schemaPath: join(__dirname, 'oneapi.json'),
       mock: false,
-      projectName: 'power-bi'
+      projectName: 'intelligent-library'
     },
     {
       requestLibPath: "import { request } from '@umijs/max'",

@@ -2,9 +2,9 @@ package com.cclu.intelligentlibrary.service.vip.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.cclu.intelligentlibrary.constant.VipConstant;
+import com.cclu.intelligentlibrary.mapper.VipMapper;
 import com.cclu.intelligentlibrary.model.po.Vip;
 import com.cclu.intelligentlibrary.service.vip.VipService;
-import com.cclu.intelligentlibrary.mapper.VipMapper;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;

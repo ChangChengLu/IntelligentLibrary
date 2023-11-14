@@ -1,9 +1,9 @@
 package com.cclu.intelligentlibrary.service.user;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.cclu.intelligentlibrary.model.po.User;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.cclu.intelligentlibrary.model.req.user.UserQueryRequest;
+import com.cclu.intelligentlibrary.model.po.User;
+import com.cclu.intelligentlibrary.model.req.user.UserQueryReq;
 import com.cclu.intelligentlibrary.model.vo.user.LoginUserVO;
 import com.cclu.intelligentlibrary.model.vo.user.UserVO;
 
@@ -99,6 +99,6 @@ public interface UserService extends IService<User> {
      * @param userQueryRequest 用户查询请求
      * @return 查询用户
      */
-    QueryWrapper<User> getQueryWrapper(UserQueryRequest userQueryRequest);
+    QueryWrapper<User> getQueryWrapper(UserQueryReq userQueryRequest);
 
 }
