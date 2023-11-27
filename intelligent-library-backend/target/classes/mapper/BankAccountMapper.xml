@@ -6,7 +6,7 @@
 
     <resultMap id="BaseResultMap" type="com.cclu.intelligentlibrary.model.po.BankAccount">
             <id property="id" column="id" jdbcType="BIGINT"/>
-            <result property="userId" column="user_id" jdbcType="VARCHAR"/>
+            <result property="userId" column="user_id" jdbcType="BIGINT"/>
             <result property="userBalance" column="user_balance" jdbcType="DECIMAL"/>
             <result property="userTotalCost" column="user_total_cost" jdbcType="DECIMAL"/>
             <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>

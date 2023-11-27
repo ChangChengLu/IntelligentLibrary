@@ -14,4 +14,8 @@ public interface VipConstant {
 
     double PLATINUM_DISCOUNT_RATE = 0.8;
 
+    double GOLD_CRITICAL_POINT = 1000;
+
+    double PLATINUM_CRITICAL_POINT = 10000;
+
 }

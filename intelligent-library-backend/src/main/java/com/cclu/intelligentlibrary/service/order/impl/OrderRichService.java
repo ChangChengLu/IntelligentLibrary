@@ -1,15 +1,18 @@
 package com.cclu.intelligentlibrary.service.order.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.cclu.intelligentlibrary.common.response.BaseResponseCode;
 import com.cclu.intelligentlibrary.context.UserActionContext;
-import com.cclu.intelligentlibrary.model.enums.VipRoleEnum;
+import com.cclu.intelligentlibrary.model.aggregates.OrderRich;
+import com.cclu.intelligentlibrary.model.po.Order;
+import com.cclu.intelligentlibrary.model.po.OrderInfo;
+import com.cclu.intelligentlibrary.model.po.Vip;
 import com.cclu.intelligentlibrary.service.order.AbstractOrderRichBase;
-import com.cclu.intelligentlibrary.service.vip.VipConfig;
-import com.cclu.intelligentlibrary.service.vip.VipService;
 import com.cclu.intelligentlibrary.utils.ThrowUtils;
+import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.math.BigDecimal;
+import java.util.List;
 
 /**
  * @author ChangCheng Lu
@@ -17,50 +20,16 @@ import java.math.BigDecimal;
  * @description
  * @copyright ChangChengLu
  */
+@Service
 public class OrderRichService extends AbstractOrderRichBase {
 
-    @Resource
-    private VipConfig vipConfig;
-
     @Override
-    protected BigDecimal vipDiscount(int userRole, int actionMode, BigDecimal actualMoney) {
-        ThrowUtils.throwIf(
-                userRole < 0 || userRole > 3,
-                BaseResponseCode.PARAMS_ERROR
-        );
-        ThrowUtils.throwIf(
-                actionMode != 1 && actionMode != 2,
-                BaseResponseCode.PARAMS_ERROR
-        );
-        ThrowUtils.throwIf(
-                actualMoney == null || actualMoney.doubleValue() < 0,
-                BaseResponseCode.PARAMS_ERROR
-        );
-        VipRoleEnum vipRoleEnum = VipRoleEnum.getEnumByCode(userRole);
-        VipService vipService = vipConfig.getVipServiceByVipRole(vipRoleEnum);
-        BigDecimal discountMoney = null;
-        switch (actionMode) {
-            case 1: {
-                discountMoney = vipService.doPayDisCount(actualMoney);
-                break;
-            }
-            case 2: {
-                discountMoney = vipService.doBorrowDiscount(actualMoney);
-                break;
-            }
-            default: break;
+    protected BigDecimal computerActualMoney(Order order, List<OrderInfo> orderInfoList) {
+        BigDecimal res = BigDecimal.ZERO;
+        for (OrderInfo orderInfo : orderInfoList) {
+            res = res.add(orderInfo.getOrderInfoAmount());
         }
-        return discountMoney == null ? actualMoney : discountMoney;
-    }
-
-    @Override
-    protected int getUserRole() {
-        return UserActionContext.getUserRole();
-    }
-
-    @Override
-    protected int getActionMode() {
-        return UserActionContext.getActionMode();
+        return res;
     }
 
     @Override
@@ -69,4 +38,22 @@ public class OrderRichService extends AbstractOrderRichBase {
         UserActionContext.clearActionMode();
     }
 
+    @Override
+    public Integer getUserVipRole(OrderRich orderRich) {
+        ThrowUtils.throwIf(
+                orderRich.getOrder() == null || orderRich.getOrderInfoList().isEmpty(),
+                BaseResponseCode.PARAMS_ERROR
+        );
+        Long userId = orderRich.getOrder().getUserId();
+        return getUserVipRole(userId);
+    }
+
+    @Override
+    public Integer getUserVipRole(Long userId) {
+        QueryWrapper<Vip> vipQueryWrapper = new QueryWrapper<>();
+        vipQueryWrapper.eq("user_id", userId);
+        Vip vip = vipService.getOne(vipQueryWrapper);
+        ThrowUtils.throwIf(vip == null, BaseResponseCode.PARAMS_ERROR);
+        return vip.getVipType();
+    }
 }

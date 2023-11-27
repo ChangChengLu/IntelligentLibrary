@@ -4,6 +4,7 @@ import com.cclu.intelligentlibrary.common.response.BaseResponseCode;
 import com.cclu.intelligentlibrary.model.aggregates.OrderRich;
 import com.cclu.intelligentlibrary.model.po.Order;
 import com.cclu.intelligentlibrary.model.po.OrderInfo;
+import com.cclu.intelligentlibrary.service.vip.discount.VipService;
 import com.cclu.intelligentlibrary.utils.ThrowUtils;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -20,10 +21,13 @@ import java.util.List;
 public abstract class AbstractOrderRichBase implements OrderRichService {
 
     @Resource
-    private OrderService orderService;
+    protected VipService vipService;
 
     @Resource
-    private OrderInfoService orderInfoService;
+    protected OrderService orderService;
+
+    @Resource
+    protected OrderInfoService orderInfoService;
 
     @Override
     public BigDecimal doOrderPay(Order order, List<OrderInfo> orderInfoList) {
@@ -36,10 +40,14 @@ public abstract class AbstractOrderRichBase implements OrderRichService {
         orderRich.setOrderInfoList(orderInfoList);
 
         BigDecimal actualMoney = computerActualMoney(order, orderInfoList);
-        BigDecimal discountMoney = doVipDiscount(actualMoney);
+        BigDecimal discountMoney = vipService.doVipDiscount(actualMoney);
+
+        order.setOrderAmount(actualMoney);
+        order.setOrderPayAmount(discountMoney);
 
         if (discountMoney == null || discountMoney.doubleValue() < 0) {
             saveOrderRich(order, orderInfoList);
+            clear();
             return actualMoney;
         }
         saveOrderRich(order, orderInfoList);
@@ -49,28 +57,13 @@ public abstract class AbstractOrderRichBase implements OrderRichService {
         return discountMoney;
     }
 
-    public BigDecimal computerActualMoney(Order order, List<OrderInfo> orderInfoList) {
-
-        return null;
-    }
-
-    private BigDecimal doVipDiscount(BigDecimal actualMoney) {
-        ThrowUtils.throwIf(
-                actualMoney == null || actualMoney.doubleValue() < 0,
-                BaseResponseCode.PARAMS_ERROR
-        );
-        int userRole = getUserRole();
-        int actionMode = getActionMode();
-        return vipDiscount(userRole, actionMode, actualMoney);
-    }
-
-    protected abstract BigDecimal vipDiscount(int userRoel, int actionMode, BigDecimal actualMoney);
-
-    protected abstract int getUserRole();
-
-    protected abstract int getActionMode();
-
-    protected abstract void clear();
+    /**
+     * actualMoney
+     * @param order order
+     * @param orderInfoList orderInfoList
+     * @return actualMoney
+     */
+    protected abstract BigDecimal computerActualMoney(Order order, List<OrderInfo> orderInfoList);
 
     @Override
     public OrderRich queryOrderRichById(Integer orderId) {
@@ -90,14 +83,19 @@ public abstract class AbstractOrderRichBase implements OrderRichService {
     @Transactional(rollbackFor = Exception.class)
     @Override
     public boolean saveOrderRich(Order order, List<OrderInfo> orderInfoList) {
-        Long orderId = order.getId();
+        Long userId = order.getUserId();
         boolean saveResult;
-        synchronized (orderId.toString().intern()) {
+        synchronized (userId.toString().intern()) {
             boolean orderSave = orderService.save(order);
             boolean orderInfoListSave = orderInfoService.saveBatch(orderInfoList);
             saveResult = orderSave && orderInfoListSave;
         }
         return saveResult;
     }
+
+    /**
+     * clear ThreadLocal
+     */
+    protected abstract void clear();
 
 }

@@ -8,25 +8,24 @@ import com.cclu.intelligentlibrary.constant.UserConstant;
 import com.cclu.intelligentlibrary.exception.BusinessException;
 import com.cclu.intelligentlibrary.mapper.UserMapper;
 import com.cclu.intelligentlibrary.model.enums.UserRoleEnum;
+import com.cclu.intelligentlibrary.model.po.BankAccount;
 import com.cclu.intelligentlibrary.model.po.User;
+import com.cclu.intelligentlibrary.model.po.Vip;
 import com.cclu.intelligentlibrary.model.req.user.UserQueryReq;
 import com.cclu.intelligentlibrary.model.vo.user.LoginUserVO;
-import com.cclu.intelligentlibrary.model.vo.user.UserVO;
+import com.cclu.intelligentlibrary.service.bank.BankAccountService;
 import com.cclu.intelligentlibrary.service.user.UserService;
+import com.cclu.intelligentlibrary.service.vip.discount.VipService;
 import com.cclu.intelligentlibrary.utils.SqlUtils;
 import com.cclu.intelligentlibrary.utils.ThrowUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
-import org.springframework.util.CollectionUtils;
 import org.springframework.util.DigestUtils;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
 
 /**
 * @author ChangChengLu
@@ -44,6 +43,12 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
 
     @Resource
     private UserMapper userMapper;
+
+    @Resource
+    private VipService vipService;
+
+    @Resource
+    private BankAccountService bankAccountService;
 
     @Override
     public long userRegister(String userAccount, String userPassword, String checkPassword) {
@@ -76,7 +81,19 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
             user.setUserPassword(encryptPassword);
             boolean saveResult = this.save(user);
             ThrowUtils.throwIf(!saveResult, BaseResponseCode.SYSTEM_ERROR, "注册失败，数据库错误");
-            return user.getId();
+            Long userId = user.getId();
+
+            BankAccount bankAccount = new BankAccount();
+            bankAccount.setUserId(userId);
+            boolean bankAccountSave = bankAccountService.save(bankAccount);
+            ThrowUtils.throwIf(!bankAccountSave, BaseResponseCode.SYSTEM_ERROR);
+
+            Vip vip = new Vip();
+            vip.setUserId(userId);
+            boolean vipSave = vipService.save(vip);
+            ThrowUtils.throwIf(!vipSave, BaseResponseCode.SYSTEM_ERROR);
+
+            return userId;
         }
     }
 
@@ -135,43 +152,11 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
     }
 
     @Override
-    public boolean isAdmin(HttpServletRequest request) {
-        ThrowUtils.throwIf(
-                request.getSession().getAttribute(UserConstant.USER_LOGIN_STATE) == null,
-                BaseResponseCode.OPERATION_ERROR, "未登录");
-        User loginUser = (User) request.getSession().getAttribute(UserConstant.USER_LOGIN_STATE);
-        UserRoleEnum userRoleEnum = UserRoleEnum.getEnumByCode(loginUser.getUserRole());
-        ThrowUtils.throwIf(
-                userRoleEnum == null,
-                BaseResponseCode.PARAMS_ERROR, "用户角色不存在"
-        );
-        return isAdmin(loginUser);
-    }
-
-    @Override
     public boolean isAdmin(User user) {
         ThrowUtils.throwIf(user == null, BaseResponseCode.PARAMS_ERROR, "请求参数为空");
         UserRoleEnum userRoleEnum = UserRoleEnum.getEnumByCode(user.getUserRole());
         ThrowUtils.throwIf(userRoleEnum == null, BaseResponseCode.PARAMS_ERROR, "用户角色不存在");
         return UserRoleEnum.ADMIN.getCode().equals(userRoleEnum.getCode());
-    }
-
-    @Override
-    public UserVO getUserVO(User user) {
-        if (user == null) {
-            return null;
-        }
-        UserVO userVO = new UserVO();
-        BeanUtils.copyProperties(user, userVO);
-        return userVO;
-    }
-
-    @Override
-    public List<UserVO> getUserVO(List<User> userList) {
-        if (CollectionUtils.isEmpty(userList)) {
-            return new ArrayList<>();
-        }
-        return userList.stream().map(this::getUserVO).collect(Collectors.toList());
     }
 
     @Override

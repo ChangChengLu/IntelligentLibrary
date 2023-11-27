@@ -2,7 +2,8 @@ package com.cclu.intelligentlibrary.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.cclu.intelligentlibrary.annotation.AuthCheck;
-import com.cclu.intelligentlibrary.common.request.DeleteRequest;
+import com.cclu.intelligentlibrary.assembly.UserAssembly;
+import com.cclu.intelligentlibrary.common.request.IdReq;
 import com.cclu.intelligentlibrary.common.response.BaseResponse;
 import com.cclu.intelligentlibrary.common.response.BaseResponseCode;
 import com.cclu.intelligentlibrary.model.enums.UserRoleEnum;
@@ -85,12 +86,12 @@ public class UserController {
 
     @PostMapping("/delete")
     @AuthCheck(mustRole = UserRoleEnum.ADMIN)
-    public BaseResponse<Boolean> deleteUser(@RequestBody DeleteRequest deleteRequest) {
+    public BaseResponse<Boolean> deleteUserById(@RequestBody IdReq idReq) {
         ThrowUtils.throwIf(
-                deleteRequest == null || deleteRequest.getId() <= 0,
+                idReq == null || idReq.getId() <= 0,
                 BaseResponseCode.PARAMS_ERROR
         );
-        boolean b = userService.removeById(deleteRequest.getId());
+        boolean b = userService.removeById(idReq.getId());
         return ResultUtils.success(b);
     }
 
@@ -136,7 +137,7 @@ public class UserController {
         Page<User> userPage = userService.page(new Page<>(current, size),
                 userService.getQueryWrapper(userQueryRequest));
         Page<UserVO> userVoPage = new Page<>(current, size, userPage.getTotal());
-        List<UserVO> userVO = userService.getUserVO(userPage.getRecords());
+        List<UserVO> userVO = UserAssembly.user2UserVO(userPage.getRecords());
         userVoPage.setRecords(userVO);
         return ResultUtils.success(userVoPage);
     }

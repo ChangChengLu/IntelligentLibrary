@@ -5,10 +5,8 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.cclu.intelligentlibrary.model.po.User;
 import com.cclu.intelligentlibrary.model.req.user.UserQueryReq;
 import com.cclu.intelligentlibrary.model.vo.user.LoginUserVO;
-import com.cclu.intelligentlibrary.model.vo.user.UserVO;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.List;
 
 /**
 * @author ChangChengLu
@@ -62,36 +60,12 @@ public interface UserService extends IService<User> {
     User getLoginUser(HttpServletRequest request);
 
     /**
-     * 判断当前用户是否为管理员
-     *
-     * @param request 用户请求
-     * @return 当前用户是否为管理员
-     */
-    boolean isAdmin(HttpServletRequest request);
-
-    /**
      * 判断用户是否为管理员
      *
      * @param user 任意用户
      * @return 判断结果
      */
     boolean isAdmin(User user);
-
-    /**
-     * 获取脱敏的用户信息
-     *
-     * @param user 未脱敏用户信息
-     * @return 脱敏的用户信息
-     */
-    UserVO getUserVO(User user);
-
-    /**
-     * 获取脱敏的用户信息
-     *
-     * @param userList 未脱敏用户信息列表
-     * @return 托名用户细信息列表
-     */
-    List<UserVO> getUserVO(List<User> userList);
 
     /**
      * 获取查询条件

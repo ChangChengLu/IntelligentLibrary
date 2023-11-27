@@ -23,7 +23,6 @@ public class OrderInfo implements Serializable {
 
     /**
      * 订单编号
-订单编号
      */
     @TableField(value = "order_id")
     private Long orderId;

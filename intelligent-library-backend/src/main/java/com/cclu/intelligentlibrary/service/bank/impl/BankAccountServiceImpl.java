@@ -25,16 +25,47 @@ public class BankAccountServiceImpl extends ServiceImpl<BankAccountMapper, BankA
     private BankAccountMapper bankAccountMapper;
 
     @Override
-    public boolean doRecharge(BigDecimal rechargeMoney) {
+    public boolean doRecharge(Long userId, BigDecimal rechargeMoney) {
         ThrowUtils.throwIf(
-                rechargeMoney != null || rechargeMoney.doubleValue() < 0,
+                rechargeMoney == null || rechargeMoney.doubleValue() < 0,
                 BaseResponseCode.PARAMS_ERROR
         );
         QueryWrapper<BankAccount> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("user_balance", rechargeMoney);
-        return update(queryWrapper);
+        queryWrapper.eq("user_id", userId);
+        BankAccount bankAccount = bankAccountMapper.selectOne(queryWrapper);
+        BigDecimal oldUserBalance = bankAccount.getUserBalance();
+        bankAccount.setUserBalance(oldUserBalance.add(rechargeMoney));
+        return updateById(bankAccount);
     }
 
+    @Override
+    public boolean doOrderBankAccountPay(Long userId, BigDecimal discountMoney) {
+        QueryWrapper<BankAccount> bankAccountQueryWrapper = new QueryWrapper<>();
+        bankAccountQueryWrapper.eq("user_id", userId);
+        BankAccount bankAccount = getOne(bankAccountQueryWrapper);
+
+        BigDecimal oldUserBalance = bankAccount.getUserBalance();
+        BigDecimal oldUserTotalCost = bankAccount.getUserTotalCost();
+
+        ThrowUtils.throwIf(
+                oldUserBalance.subtract(discountMoney).doubleValue() < 0,
+                BaseResponseCode.SYSTEM_ERROR, "账号余额不足"
+        );
+        bankAccount.setUserBalance(oldUserBalance.subtract(discountMoney));
+        bankAccount.setUserTotalCost(oldUserTotalCost.add(discountMoney));
+        return updateById(bankAccount);
+    }
+
+    @Override
+    public BankAccount getBankAccountByUserId(Long userId) {
+        ThrowUtils.throwIf(
+                userId == null || userId < 0,
+                BaseResponseCode.PARAMS_ERROR
+        );
+        QueryWrapper<BankAccount> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("user_id", userId);
+        return getOne(queryWrapper);
+    }
 }
 
 

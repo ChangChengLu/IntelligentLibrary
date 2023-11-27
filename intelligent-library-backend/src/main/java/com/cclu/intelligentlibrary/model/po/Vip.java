@@ -27,7 +27,7 @@ public class Vip implements Serializable {
      * 用户编号
      */
     @TableField(value = "user_id")
-    private String userId;
+    private Long userId;
 
     /**
      * 0:ordinary(普通会员)/1:gold(金牌会员)/2:platinum(白金会员)

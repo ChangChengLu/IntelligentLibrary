@@ -1,4 +1,40 @@
 declare namespace API {
+  type BankAccountRechargeReq = {
+    rechargeMoney?: number;
+    userId?: number;
+  };
+
+  type BankAccountVO = {
+    id?: number;
+    userBalance?: number;
+    userId?: number;
+    userTotalCost?: number;
+  };
+
+  type BaseResponseBankAccountVO_ = {
+    code?: number;
+    data?: BankAccountVO;
+    message?: string;
+  };
+
+  type BaseResponseBigdecimal_ = {
+    code?: number;
+    data?: number;
+    message?: string;
+  };
+
+  type BaseResponseBookInfo_ = {
+    code?: number;
+    data?: BookInfo;
+    message?: string;
+  };
+
+  type BaseResponseBookVO_ = {
+    code?: number;
+    data?: BookVO;
+    message?: string;
+  };
+
   type BaseResponseBoolean_ = {
     code?: number;
     data?: boolean;
@@ -14,6 +50,18 @@ declare namespace API {
   type BaseResponseLong_ = {
     code?: number;
     data?: number;
+    message?: string;
+  };
+
+  type BaseResponsePageBookInfo_ = {
+    code?: number;
+    data?: PageBookInfo_;
+    message?: string;
+  };
+
+  type BaseResponsePageBookVO_ = {
+    code?: number;
+    data?: PageBookVO_;
     message?: string;
   };
 
@@ -46,6 +94,36 @@ declare namespace API {
     bookPublisher?: string;
     bookStock?: number;
     bookTags?: string;
+    id?: number;
+  };
+
+  type BookInfo = {
+    bookAuthor?: string;
+    bookAvatar?: string;
+    bookBorrowPrice?: number;
+    bookDesc?: string;
+    bookName?: string;
+    bookPrice?: number;
+    bookStock?: number;
+    bookTags?: string;
+    id?: number;
+  };
+
+  type BookQueryReq = {
+    bookAuthor?: string;
+    bookBorrowPrice?: number;
+    bookDesc?: string;
+    bookIsbn?: string;
+    bookName?: string;
+    bookPrice?: number;
+    bookPublisher?: string;
+    bookStock?: number;
+    bookTags?: string;
+    current?: number;
+    id?: number;
+    pageSize?: number;
+    sortField?: string;
+    sortOrder?: string;
   };
 
   type BookUpdateReq = {
@@ -59,6 +137,21 @@ declare namespace API {
     bookPublisher?: string;
     bookStock?: number;
     bookTags?: string;
+    id?: number;
+  };
+
+  type BookVO = {
+    bookAuthor?: string;
+    bookAvatar?: string;
+    bookBorrowPrice?: number;
+    bookDesc?: string;
+    bookIsbn?: string;
+    bookName?: string;
+    bookPrice?: number;
+    bookPublisher?: string;
+    bookStock?: number;
+    bookTags?: string;
+    id?: number;
   };
 
   type delBookByIdUsingGETParams = {
@@ -66,12 +159,12 @@ declare namespace API {
     id?: number;
   };
 
-  type DeleteRequest = {
+  type getUserByIdUsingGETParams = {
+    /** id */
     id?: number;
   };
 
-  type getUserByIdUsingGETParams = {
-    /** id */
+  type IdReq = {
     id?: number;
   };
 
@@ -84,11 +177,54 @@ declare namespace API {
     userDesc?: string;
     userEmail?: string;
     userNickname?: string;
+    userRole?: number;
+  };
+
+  type OrderInfo = {
+    bookId?: number;
+    createTime?: string;
+    deleted?: number;
+    id?: number;
+    orderId?: number;
+    orderInfoAmount?: number;
+    orderInfoPayAmount?: number;
+    updateTime?: string;
   };
 
   type OrderItem = {
     asc?: boolean;
     column?: string;
+  };
+
+  type OrderReq = {
+    orderInfoList?: OrderInfo[];
+    userId?: number;
+  };
+
+  type PageBookInfo_ = {
+    countId?: string;
+    current?: number;
+    maxLimit?: number;
+    optimizeCountSql?: boolean;
+    orders?: OrderItem[];
+    pages?: number;
+    records?: BookInfo[];
+    searchCount?: boolean;
+    size?: number;
+    total?: number;
+  };
+
+  type PageBookVO_ = {
+    countId?: string;
+    current?: number;
+    maxLimit?: number;
+    optimizeCountSql?: boolean;
+    orders?: OrderItem[];
+    pages?: number;
+    records?: BookVO[];
+    searchCount?: boolean;
+    size?: number;
+    total?: number;
   };
 
   type PageUser_ = {
@@ -165,11 +301,15 @@ declare namespace API {
   };
 
   type UserUpdateReq = {
+    gender?: number;
     id?: number;
+    userAddress?: string;
     userAvatar?: string;
-    userName?: string;
-    userProfile?: string;
-    userRole?: string;
+    userDesc?: string;
+    userEmail?: string;
+    userNickname?: string;
+    userPhone?: string;
+    userRole?: number;
   };
 
   type UserVO = {

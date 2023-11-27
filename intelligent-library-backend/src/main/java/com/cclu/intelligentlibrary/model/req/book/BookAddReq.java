@@ -15,6 +15,11 @@ import java.math.BigDecimal;
 public class BookAddReq implements Serializable {
 
     /**
+     * 书籍ID
+     */
+    private Long id;
+
+    /**
      * 书籍名称
      */
     private String bookName;

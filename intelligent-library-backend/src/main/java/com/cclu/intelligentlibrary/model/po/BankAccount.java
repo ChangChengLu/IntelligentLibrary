@@ -28,7 +28,7 @@ public class BankAccount implements Serializable {
      * 用户编号
      */
     @TableField(value = "user_id")
-    private String userId;
+    private Long userId;
 
     /**
      * 账户余额

@@ -1,16 +1,11 @@
 import Footer from '@/components/Footer';
-import { getFakeCaptcha } from '@/services/ant-design-pro/login';
 import {
   AlipayCircleOutlined,
-  LockOutlined,
-  MobileOutlined,
-  TaobaoCircleOutlined, UserOutlined,
-  WeiboCircleOutlined,
+  LockOutlined, MobileOutlined, TaobaoCircleOutlined,
+  UserOutlined, WeiboCircleOutlined,
 } from '@ant-design/icons';
 import {
   LoginForm,
-  ProFormCaptcha,
-  ProFormCheckbox,
   ProFormText,
 } from '@ant-design/pro-components';
 import { useEmotionCss } from '@ant-design/use-emotion-css';
@@ -18,8 +13,12 @@ import {FormattedMessage, history, SelectLang, useIntl, Helmet, useModel} from '
 import { Alert, message, Tabs } from 'antd';
 import Settings from '../../../../config/defaultSettings';
 import React, { useState } from 'react';
-import {Link} from "@@/exports";
 import {getLoginUserUsingGET, userLoginUsingPOST} from "@/services/intelligent-library/userController";
+import {ProFormCaptcha} from "@ant-design/pro-form";
+import {getFakeCaptcha} from "@/services/ant-design-pro/login";
+import {ProFormCheckbox} from "@ant-design/pro-form/lib";
+import {Link} from "@@/exports";
+
 
 const ActionIcons = () => {
   const langClassName = useEmotionCss(({ token }) => {

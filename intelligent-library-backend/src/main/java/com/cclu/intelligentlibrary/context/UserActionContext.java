@@ -8,9 +8,9 @@ package com.cclu.intelligentlibrary.context;
  */
 public class UserActionContext {
 
-    private static ThreadLocal<Integer> userRole;
+    private static final ThreadLocal<Integer> userRole;
 
-    private static ThreadLocal<Integer> actionMode;
+    private static final ThreadLocal<Integer> actionMode;
 
     static {
         userRole = new ThreadLocal<>();

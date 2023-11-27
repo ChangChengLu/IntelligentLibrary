@@ -1,9 +1,6 @@
 package com.cclu.intelligentlibrary.model.po;
 
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableLogic;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -21,7 +18,7 @@ public class Book implements Serializable {
     /**
      * 书籍编号
      */
-    @TableId(value = "id")
+    @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
     /**
@@ -93,7 +90,7 @@ public class Book implements Serializable {
     /**
      * 数据创建时间
      */
-    @TableField(value = "createTime")
+    @TableField(value = "create_time")
     private Date createTime;
 
     /**

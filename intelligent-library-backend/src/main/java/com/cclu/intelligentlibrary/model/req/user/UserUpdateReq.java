@@ -14,14 +14,14 @@ import java.io.Serializable;
 public class UserUpdateReq implements Serializable {
 
     /**
-     * id
+     * 用户编号
      */
     private Long id;
 
     /**
      * 用户昵称
      */
-    private String userName;
+    private String userNickname;
 
     /**
      * 用户头像
@@ -29,14 +29,34 @@ public class UserUpdateReq implements Serializable {
     private String userAvatar;
 
     /**
-     * 简介
+     * 用户描述
      */
-    private String userProfile;
+    private String userDesc;
 
     /**
-     * 用户角色：user/admin/ban
+     * 用户性别
      */
-    private String userRole;
+    private Integer gender;
+
+    /**
+     * 0:admin(管理员)/1:normal_user(普通用户)/2:ban_user(禁用用户)
+     */
+    private Integer userRole;
+
+    /**
+     * 用户邮箱地址
+     */
+    private String userEmail;
+
+    /**
+     * 用户联系电话
+     */
+    private String userPhone;
+
+    /**
+     * 用户地址(收货地址)
+     */
+    private String userAddress;
 
     private static final long serialVersionUID = 1L;
 

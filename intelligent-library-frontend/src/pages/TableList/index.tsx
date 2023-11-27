@@ -17,7 +17,7 @@ import type { FormValueType } from './components/UpdateForm';
 import UpdateForm from './components/UpdateForm';
 
 /**
- * @en-US Add node
+ * @en-US Update node
  * @zh-CN 添加节点
  * @param fields
  */

@@ -38,4 +38,18 @@ public interface OrderRichService {
      */
     boolean saveOrderRich(Order order, List<OrderInfo> orderInfoList);
 
+    /**
+     * vipRole
+     * @param orderRich orderRich
+     * @return vipRole
+     */
+    Integer getUserVipRole(OrderRich orderRich);
+
+    /**
+     * 获取 VIP role
+     * @param userId 用户ID
+     * @return vipRole
+     */
+    Integer getUserVipRole(Long userId);
+
 }

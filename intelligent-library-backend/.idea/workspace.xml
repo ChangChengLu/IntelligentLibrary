@@ -5,87 +5,116 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f7fb6808-a066-4c5a-b432-7c0026e45100" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/model/req/book/BookAddReq.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/model/req/book/BookQueryReq.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/model/req/book/BookUpdateReq.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/assembly/BankAccountAssembly.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/assembly/BookAssembly.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/assembly/UserAssembly.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/controller/BankAccountController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/facade/IOrderProcess.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/facade/impl/OrderProcess.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/model/req/bankAccount/BankAccountRechargeReq.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/model/req/order/OrderReq.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/model/vo/bankAccount/BankAccountVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/vip/discount/AbstractVipDiscountBase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/vip/discount/VipDiscountStrategyConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/vip/discount/impl/VipDiscountImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/vip/state/AbstractVipRoleBase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/vip/state/IVipRoleHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/vip/state/RoleConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/vip/state/event/GoldNumberRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/vip/state/event/OrdinaryRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/vip/state/event/PlatinumNumberRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/vip/state/impl/VipRoleHandlerImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/vip/strategy/IVipDiscountStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/cclu/intelligentlibrary/test/mock/MockDateInsert.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../intelligent-library-frontend/src/pages/Bank/Profile/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../intelligent-library-frontend/src/pages/Bank/Recharge/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../intelligent-library-frontend/src/pages/Book/Add/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../intelligent-library-frontend/src/pages/Book/Borrow/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../intelligent-library-frontend/src/pages/Book/Buy/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../intelligent-library-frontend/src/pages/Book/Detail/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../intelligent-library-frontend/src/pages/Book/Info/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../intelligent-library-frontend/src/pages/Book/Management/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../intelligent-library-frontend/src/pages/Book/Update/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../intelligent-library-frontend/src/pages/user/Profile/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../intelligent-library-frontend/src/pages/user/Update/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/0c3b37a3-a467-4a55-90cc-1028070654ad.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0c3b37a3-a467-4a55-90cc-1028070654ad.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/aop/AuthInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/aop/AuthInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/common/request/DeleteRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/common/request/IdReq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/constant/CommonConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/constant/CommonConstant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/constant/VipConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/constant/VipConstant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/context/UserActionContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/context/UserActionContext.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/controller/BookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/controller/OrderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/mapper/BankAccountMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/mapper/BankAccountMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/mapper/BookMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/mapper/BookMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/mapper/BorrowMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/mapper/BorrowMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/mapper/OrderInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/mapper/OrderInfoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/mapper/OrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/mapper/OrderMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/mapper/VipMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/mapper/VipMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/model/po/BankAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/model/po/BankAccount.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/model/po/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/model/po/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/model/po/Borrow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/model/po/Borrow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/model/po/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/model/po/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/model/po/OrderInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/model/po/OrderInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/model/po/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/model/po/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/model/po/Vip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/model/po/Vip.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/model/req/user/UserAddRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/model/req/user/UserAddReq.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/model/req/user/UserLoginRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/model/req/user/UserLoginReq.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/model/req/user/UserQueryRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/model/req/user/UserQueryReq.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/model/req/user/UserRegisterRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/model/req/user/UserRegisterReq.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/model/req/user/UserUpdateRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/model/req/user/UserUpdateReq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/model/req/book/BookAddReq.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/model/req/book/BookAddReq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/model/req/book/BookQueryReq.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/model/req/book/BookQueryReq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/model/req/book/BookUpdateReq.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/model/req/book/BookUpdateReq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/model/req/user/UserUpdateReq.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/model/req/user/UserUpdateReq.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/model/vo/book/BookInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/model/vo/book/BookInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/model/vo/book/BookVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/model/vo/book/BookVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/model/vo/user/UserVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/model/vo/user/UserVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/model/vo/user/LoginUserVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/model/vo/user/LoginUserVO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/bank/BankAccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/bank/BankAccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/bank/impl/BankAccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/bank/impl/BankAccountServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/book/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/book/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/borrow/BorrowService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/borrow/BorrowService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/borrow/impl/BorrowServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/borrow/impl/BorrowServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/book/impl/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/book/impl/BookServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/order/AbstractOrderRichBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/order/AbstractOrderRichBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/order/OrderInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/order/OrderInfoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/order/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/order/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/order/impl/OrderInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/order/impl/OrderInfoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/order/OrderRichService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/order/OrderRichService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/order/impl/OrderRichService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/order/impl/OrderRichService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/order/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/order/impl/OrderServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/user/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/user/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/user/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/vip/VipService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/vip/VipService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/vip/impl/OrdinaryVipServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/vip/impl/OrdinaryVipServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/aop/AuthInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/aop/AuthInterceptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/vip/VipConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/vip/VipService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/vip/discount/VipService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/vip/impl/GoldVipServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/vip/strategy/impl/GoldVipDiscountStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/vip/impl/OrdinaryVipServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/vip/strategy/impl/OrdinaryVipDiscountStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/vip/impl/PlatinumVipServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/vip/strategy/impl/PlatinumVipDiscountStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/BankAccountMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/BankAccountMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/VipMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/VipMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/common/request/DeleteRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/constant/CommonConstant.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/constant/CommonConstant.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/constant/VipConstant.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/constant/VipConstant.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/context/UserActionContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/context/UserActionContext.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/controller/BookController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/controller/BookController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/controller/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/controller/OrderController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/controller/UserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/model/po/BankAccount.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/model/po/BankAccount.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/model/po/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/model/po/Book.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/model/po/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/model/po/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/model/po/OrderInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/model/po/OrderInfo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/model/po/Vip.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/model/po/Vip.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/model/req/user/UserAddRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/model/req/user/UserLoginRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/model/req/user/UserQueryRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/model/req/user/UserRegisterRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/model/req/user/UserUpdateRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/model/req/book/BookAddReq.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/model/req/book/BookAddReq.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/model/req/book/BookQueryReq.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/model/req/book/BookQueryReq.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/model/req/book/BookUpdateReq.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/model/req/book/BookUpdateReq.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/model/req/user/UserUpdateReq.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/model/req/user/UserUpdateReq.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/model/vo/book/BookInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/model/vo/book/BookInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/model/vo/book/BookVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/model/vo/book/BookVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/model/vo/user/UserVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/model/vo/user/UserVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/service/BankAccountService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/service/BookService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/service/BorrowService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/service/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/service/impl/BankAccountServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/service/impl/BookServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/service/impl/BorrowServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/service/impl/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/model/vo/user/LoginUserVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/model/vo/user/LoginUserVO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/service/bank/BankAccountService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/service/bank/BankAccountService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/service/bank/impl/BankAccountServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/service/bank/impl/BankAccountServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/service/book/BookService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/service/book/BookService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/service/book/impl/BookServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/service/book/impl/BookServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/service/order/AbstractOrderRichBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/service/order/AbstractOrderRichBase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/service/order/OrderRichService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/service/order/OrderRichService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/service/order/impl/OrderRichService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/service/order/impl/OrderRichService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../intelligent-library-frontend/config/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../intelligent-library-frontend/config/config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/service/user/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/service/user/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/service/user/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/service/user/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/service/vip/VipConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/service/vip/VipService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/service/vip/impl/GoldVipServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/service/vip/impl/OrdinaryVipServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cclu/intelligentlibrary/service/vip/impl/PlatinumVipServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/BankAccountMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/BankAccountMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/VipMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/VipMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-library-frontend/config/defaultSettings.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../intelligent-library-frontend/config/defaultSettings.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../intelligent-library-frontend/config/routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../intelligent-library-frontend/config/routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../intelligent-library-frontend/src/app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../intelligent-library-frontend/src/app.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../intelligent-library-frontend/src/components/Footer/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../intelligent-library-frontend/src/components/Footer/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../intelligent-library-frontend/src/pages/AddChart/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../intelligent-library-frontend/src/pages/AddChart/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../intelligent-library-frontend/src/pages/MyChart/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../intelligent-library-frontend/src/pages/MyChart/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-library-frontend/src/pages/AddChart/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-library-frontend/src/pages/MyChart/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../intelligent-library-frontend/src/pages/user/Management/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-library-frontend/src/pages/TableList/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../intelligent-library-frontend/src/pages/TableList/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../intelligent-library-frontend/src/pages/user/Login/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../intelligent-library-frontend/src/pages/user/Login/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../intelligent-library-frontend/src/pages/user/Registry/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../intelligent-library-frontend/src/pages/user/Registry/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../intelligent-library-frontend/src/services/power-bi/chartController.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../intelligent-library-frontend/src/services/power-bi/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../intelligent-library-frontend/src/services/power-bi/typings.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../intelligent-library-frontend/src/services/power-bi/userController.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-library-frontend/src/services/intelligent-library/bookController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../intelligent-library-frontend/src/services/intelligent-library/bookController.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-library-frontend/src/services/intelligent-library/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../intelligent-library-frontend/src/services/intelligent-library/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-library-frontend/src/services/intelligent-library/typings.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../intelligent-library-frontend/src/services/intelligent-library/typings.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-library-frontend/src/services/intelligent-library/userController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../intelligent-library-frontend/src/services/intelligent-library/userController.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,8 +124,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="FxmlFile" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -150,6 +179,9 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Code\IntelligentLibrary\intelligent-library-backend\src\main\java\com\cclu\intelligentlibrary" />
@@ -158,14 +190,30 @@
       <recent name="D:\Code\IntelligentLibrary\intelligent-library-backend\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.cclu.intelligentlibrary.service.vip.state.event" />
       <recent name="com.cclu.intelligentlibrary.model.req.book" />
       <recent name="com.cclu.intelligentlibrary.service.vip.impl" />
       <recent name="com.cclu.intelligentlibrary" />
       <recent name="com.cclu.intelligentlibrary.controller" />
-      <recent name="com.cclu.intelligentlibrary.model.enums" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.MainApplication">
+    <configuration name="MockDateInsert.insertBookMockData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="intelligent-library-backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cclu.intelligentlibrary.test.mock.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.cclu.intelligentlibrary.test.mock" />
+      <option name="MAIN_CLASS_NAME" value="com.cclu.intelligentlibrary.test.mock.MockDateInsert" />
+      <option name="METHOD_NAME" value="insertBookMockData" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MainApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="intelligent-library-backend" />
       <extension name="coverage">
@@ -182,6 +230,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.MainApplication" />
+        <item itemvalue="JUnit.MockDateInsert.insertBookMockData" />
       </list>
     </recent_temporary>
   </component>
@@ -209,6 +258,24 @@
       <workItem from="1699789002103" duration="3729000" />
       <workItem from="1699862292674" duration="485000" />
       <workItem from="1699943269755" duration="1394000" />
+      <workItem from="1699949074961" duration="498000" />
+      <workItem from="1699950367994" duration="3571000" />
+      <workItem from="1699954201885" duration="142000" />
+      <workItem from="1700533916794" duration="3875000" />
+      <workItem from="1700552632463" duration="6423000" />
+      <workItem from="1700735117843" duration="21000" />
+      <workItem from="1700895763374" duration="14406000" />
+      <workItem from="1700919744710" duration="13000" />
+      <workItem from="1700921579038" duration="136000" />
+      <workItem from="1700991828615" duration="4256000" />
+      <workItem from="1700996152581" duration="870000" />
+      <workItem from="1700997087857" duration="2954000" />
+      <workItem from="1701046661671" duration="93000" />
+      <workItem from="1701050592559" duration="146000" />
+      <workItem from="1701050983181" duration="3320000" />
+      <workItem from="1701055814510" duration="1052000" />
+      <workItem from="1701071934450" duration="3258000" />
+      <workItem from="1701076993375" duration="10481000" />
     </task>
     <servers />
   </component>
@@ -225,5 +292,31 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/service/bank/impl/BankAccountServiceImpl.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/controller/BankAccountController.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/controller/OrderController.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/cclu/intelligentlibrary/controller/OrderController.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

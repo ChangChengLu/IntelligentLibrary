@@ -1,6 +1,8 @@
 package com.cclu.intelligentlibrary.model.req.book;
 
+import com.cclu.intelligentlibrary.common.request.PageRequest;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -11,8 +13,14 @@ import java.math.BigDecimal;
  * @description
  * @copyright ChangChengLu
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
-public class BookQueryReq implements Serializable {
+public class BookQueryReq extends PageRequest implements Serializable {
+
+    /**
+     * 书籍编号
+     */
+    private Long id;
 
     /**
      * 书籍名称
@@ -23,11 +31,6 @@ public class BookQueryReq implements Serializable {
      * 书籍作者
      */
     private String bookAuthor;
-
-    /**
-     * 书籍封面
-     */
-    private String bookAvatar;
 
     /**
      * 书籍描述
